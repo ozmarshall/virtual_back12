@@ -39,7 +39,7 @@ print(id(especialidad))
 del year
 print (year)
 
-nombre = 'eduardo'
+nombre = 'eduardo100'
 
 print(nombre)
 
