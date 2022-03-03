@@ -26,3 +26,18 @@ else:
 
 print('finalizado')
 
+
+
+ingreso= int(input('ingresa tu ingreso mensual '))
+
+if (ingreso > 500): 
+    print('usted no recibe bono')
+
+elif ingreso >= 250 and ingreso <=500 :
+    print('usted recibe bono')
+
+else: 
+    print('usted recibe bono')
+
+print('finalizado')
+
