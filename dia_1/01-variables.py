@@ -1,47 +1,55 @@
-#hola esto es un comentario
-# TODO: Logica para un controlador
+# Esto es un comentario y sirve para dar contexto de que se hace, se hizo o se hara
+# TODO: logica para este controlador
 
 edad = 30
- #variable de texto
 
-nombre = "eduardo"
-apellido ='de rivero'
+# variables de texto
+nombre = 'eduardo'
+apellido = "de'rivero"
 
 # si queremos tener un texto que pueda contener saltos de linea
-descripcion = """hola amigos :
-como estan? 
-yo muy bien jeje"""
+descripcion = """hola amigos:
+como estan?
+yo muy bien jeje
+"""
 
-descripcion2 = '''hola amigos :
-como estan? 
-yo muy bien jeje'''
+descripcion2 = '''¿hola amigos:
+como estan?'''
 
-print('a', 'b', 'c')
+desCripcion2 = "adios"
+
 print(descripcion2)
-print(descripcion)
+print(desCripcion2)
 
-#variables numericas 
+# variables numericas
 year = 2022
 
-#type() = mostrata que tipo de variable es 
+# type() => mostrara que tipo de variable es
 print(type(year))
-print(type(descripcion))
+print(type(desCripcion2))
 
-#variable sin contenido a exepcion del None
-#en python None = null | undefined
+# Python no se puede crear una variable sin un contenido a exepcion del None
+# en python None = null | undefined
 especialidad = None
 
+# en Python no hace validacion del tipo de dato primario (si la variable 'nace' siendo string) normal se puede cambiar su tipo a otro (Boolean, int, float, array, etc.)
+# en Python no existen las constantes
+dni= [123123123]
+dni= 'peruano'
+dni= False
+
+# id() > dara la ubicacion de esa variablen en relacion a la memoria del dispositivo
+print(id(dni))
+
+
 print(type(especialidad))
-#id da la ubicacion de esa variable en ralcion del dispositivo
-print(id(especialidad))
 
-#del elimina la variable de la memoria
-del year
-print (year)
+mes, dia = "febrero", 28
 
-nombre = 'eduardo100'
+print(mes)
 
-print(nombre)
+# del > elimina la variable de la memoria 
+del mes
 
-#concatenar 
-print('el nombre es :' ,nombre, 'del usuario' )
+# si queremos usar luego de la eliminacion esa variable no sera posible ya que se elimino de la memoria
+print(mes)
