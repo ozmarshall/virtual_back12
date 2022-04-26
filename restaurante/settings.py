@@ -57,8 +57,10 @@ INSTALLED_APPS = [
     'autorizacion',
 ]
 
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -166,3 +168,23 @@ cloudinary.config(
     api_key=environ.get('CLOUDINARY_API_KEY'),
     api_secret=environ.get('CLOUDINARY_SECRET')
 )
+
+# http://whitenoise.evans.io/en/stable/
+# Sirve para indicar que jalara los estilos de los archivos estaticos
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Para indicar donde se guardaran los archivos staticos (css, js, html) usados por DRF, y el panel administrativo
+# se usa para cuando corramos el comando 'python manage.py collectstatic'
+STATIC_ROOT = BASE_DIR / 'static_files'
+
+
+# Permitiras todos los origenes (https://mipagina.com http://fraudes.com)
+# https://pypi.org/project/django-cors-headers/
+# CORS_ORIGIN_ALLOW_ALL = True
+# son los origines permitidos, si queremos usar todos usaremos CORS_ORIGIN_ALLOW_ALL
+CORS_ALLOWED_ORIGINS = ['http://127.0.0.1:5500',
+                        'https://mifront.netlify.app']  # http:misjackers.net
+# son los methodos permitidos, por defecto son todos
+CORS_ALLOWED_METHODS = ['GET', 'POST']  # no podra > PUT | DELETE
+# son la cabeceras permitidas , por defecto son todas
+CORS_ALLOWED_HEADERS = ['content-type', 'authorization', 'origin']
